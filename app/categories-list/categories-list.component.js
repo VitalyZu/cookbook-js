@@ -1,24 +1,20 @@
 angular.module('categoriesList')
     .component('categoriesList', {
         templateUrl: 'categories-list/categories-list.template.html',
-        controller: ['$scope', '$rootScope', '$route', '$timeout', function CategoriesListController($scope, $rootScope, $route, $timeout) {
-            $scope.isLoaded = $rootScope.isLoaded
-            console.log($rootScope)
-            $timeout(function () { // anything you want can go here and will safely be run on the next digest.
-                $scope.$apply(function () {
-                    // Обворачиваем функцией $apply
-                    $scope.data = $rootScope.data;
-                    console.log($scope.data)
-                });
+        controller: ['$scope', '$rootScope','$timeout', function CategoriesListController($scope, $rootScope,$timeout) {
+            var self = this
+            this.isLoaded = $rootScope.isLoaded
+            $rootScope.categoryID = 0;
+            $scope.$on('json-loaded', function (e, v) {
+                console.log('recipes loaded')
+                $timeout(function () {
+                $scope.recipes = v.recipes
+                self.categories = v.categories})
             })
-            $scope.$on('tag',function(e,v){
-                console.log(v)
-                $scope.base = v 
-                console.log($scope)
-            })
-
-            console.log($scope)
-
+            console.log(this)
+            $scope.changeCategory = function (id) {
+                $rootScope.categoryID = id
+            }
         }
         ]
     })

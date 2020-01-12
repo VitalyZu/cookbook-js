@@ -1,0 +1,12 @@
+<input ng-model='query'>
+<div>{{recipes.length}}</div>
+<div class='recipes-wrap'>
+    <div ng-repeat='recipe in recipes |category:$root.categoryID |filter:query' class='recipe'>
+        <h4>{{recipe.title}}</h4>
+        <p>{{recipe.id}}</p>
+        <p>{{recipe.description}}</p>
+        <div ng-repeat='category in recipe.categoryID |categoryName:category:categories'>
+            <div class='category-name category-{{category[1]}}'>{{category[0]}}</div>
+        </div>
+    </div>
+</div>

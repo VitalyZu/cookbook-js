@@ -1,0 +1,10 @@
+<div ng-repeat='recipe in recipes |filter:query'>
+    <h1>{{recipe.title}}</h1>
+    <p>{{recipe.description}}</p>
+    <ul>
+        <li ng-repeat='ingredient in recipe.ingredients'>
+            {{ingredient}}
+        </li>
+    </ul>
+    <p ng-repeat="proc in recipe.process">{{proc}}</p>
+</div>

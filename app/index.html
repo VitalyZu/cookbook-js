@@ -12,18 +12,25 @@
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
   <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular-route/angular-route.js"></script>
   <script src="app.module.js"></script>
   <script src="categories-list/categories-list.module.js"></script>
   <script src="categories-list/categories-list.component.js"></script>
+  <script src="recipes-list/recipes-list.module.js"></script>
+  <script src="recipes-list/recipes-list.component.js"></script>
+  <script src="core/core.module.js"></script>
+  <script src="core/category.filter.js"></script>
+  <script src="core/categoryName.filter.js"></script>
 </head>
 <body>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
   <categories-list></categories-list>
+  <recipes-list></recipes-list>
     
 
   <!-- In production use:
