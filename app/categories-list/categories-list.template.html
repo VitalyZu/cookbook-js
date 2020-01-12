@@ -1,2 +1,4 @@
-{{$ctrl.load}}
-<h1 ng-repeat='category in $ctrl.arr' ng-model='asd'>a{{category}}</h1>
+<p ng-hide='$root.isLoaded'>Loading...</p>
+
+<h1 ng-repeat='category in base.categories'>{{category.name}}</h1>
+
