@@ -1,0 +1,28 @@
+{
+    "categories": [
+        {
+            "name": "Первая категория",
+            "id": 1
+        },
+        {
+            "name": "Вторая категория",
+            "id": 2
+        }
+    ],
+    "recipes":[
+        {"id": 1,
+            "title": "Первое",
+            "description": "Описание 1",
+            "ingredients": ["инг1","инг2"],
+            "process": ["Проц 1"],
+            "photo": [],
+            "categoryID":[1]},
+            {"id": 2,
+                "title": "Второе",
+                "description": "Описание 2",
+                "ingredients": ["инг3","инг4"],
+                "process": ["Проц 2"],
+                "photo": [],
+                "categoryID":[2]}
+    ]
+}

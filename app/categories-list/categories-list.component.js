@@ -5,12 +5,15 @@ angular.module('categoriesList')
             var self = this
             this.isLoaded = $rootScope.isLoaded
             $rootScope.categoryID = 0;
-            $scope.$on('json-loaded', function (e, v) {
-                console.log('recipes loaded')
-                $timeout(function () {
-                $scope.recipes = v.recipes
-                self.categories = v.categories})
+            
+            $scope.base = $rootScope.base
+            console.log($scope.base)
+            $scope.base.then(resp=>{
+                console.log(resp)
+                $scope.categories = resp.categories
             })
+            
+            
             console.log(this)
             $scope.changeCategory = function (id) {
                 $rootScope.categoryID = id
