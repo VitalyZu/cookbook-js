@@ -1,20 +1,17 @@
 angular.module('categoriesList')
     .component('categoriesList', {
         templateUrl: 'categories-list/categories-list.template.html',
-        controller: ['$scope', '$rootScope','$timeout', function CategoriesListController($scope, $rootScope,$timeout) {
+        controller: ['$scope', '$rootScope', '$timeout', 'httpservice', function CategoriesListController($scope, $rootScope, $timeout, httpservice) {
             var self = this
-            this.isLoaded = $rootScope.isLoaded
-            $rootScope.categoryID = 0;
-            
-            $scope.base = $rootScope.base
-            console.log($scope.base)
-            $scope.base.then(resp=>{
-                console.log(resp)
-                $scope.categories = resp.categories
+            //$rootScope.categoryID = 0;
+            console.log($rootScope.categoryID)
+            let promise = httpservice
+            console.log(promise)
+            promise.then(function (resp) {
+                console.log(resp.data)
+                $scope.categories = resp.data.categories
+                console.log($scope.categories)
             })
-            
-            
-            console.log(this)
             $scope.changeCategory = function (id) {
                 $rootScope.categoryID = id
             }

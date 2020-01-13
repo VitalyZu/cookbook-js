@@ -1,8 +1,7 @@
 <p ng-hide='!$ctrl.isLoaded'>Loading...</p>
-<div ng-init='cat={name:"all"}'>
-    <button ng-class="{'active' : cat.name === 'all'}" ng-click='changeCategory(0);cat.name="all"'>Все рецепты</button>
-    <button ng-class="{'active': cat.name === $index}"
-            ng-click='changeCategory(category.id);cat.name = $index'
+<div ng-init='$root.categoryActive'>
+    <button ng-class="{'active' : $root.categoryActive.name === 'all'}" ng-click='changeCategory(0);$root.categoryActive.name="all"'>Все рецепты</button>
+    <button ng-class="{'active': $root.categoryActive.name === $index}"
+            ng-click='changeCategory(category.id);$root.categoryActive.name = $index'
             ng-repeat='category in categories'>{{category.name}}</button>
 </div>
-{{eee}}

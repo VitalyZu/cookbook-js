@@ -3,10 +3,15 @@
 <div class='recipes-wrap'>
     <div ng-repeat='recipe in recipes |category:$root.categoryID |filter:query' class='recipe'>
         <h4>{{recipe.title}}</h4>
-        <p>{{recipe.id}}</p>
+        <p>id{{recipe.id}}</p>
         <p>{{recipe.description}}</p>
-        <div ng-repeat='category in recipe.categoryID |categoryName:category:categories'>
-            <div class='category-name category-{{category[1]}}'>{{category[0]}}</div>
+        <button><a href="#!/recipes/{{recipe.id}}">Рецепт</a></button>
+        
+        <div >
+            <div ng-repeat='category in recipe.categoryID | categoryName:$ctrl.categories' class='category-name category-{{category.id}}'>{{category.name}}</div>
         </div>
     </div>
+</div>
+<div class='pages-wrap'>
+    <button ng-repeat='btn in _.range(((recipes | category:$root.categoryID | filter:query).length)/$root.onPage)'>{{$index+1}}</button>
 </div>

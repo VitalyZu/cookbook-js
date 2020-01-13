@@ -1,6 +1,23 @@
+a {
+    text-decoration: none;
+    color: inherit;
+    border: solid 1px black;
+}
+
 .recipes-wrap {
     border: solid 1px black;
 }
+
+.recipes-wrap button, .recipe-wrap button {
+    padding: 0px;
+    width: 50%;
+}
+a {
+    padding: 4px 0px;
+    display: inline-block;
+    width: 100%;
+}
+
 
 .recipe {
     border: solid 1px blue;
@@ -52,4 +69,13 @@
 .category-7 {
     background-color: rgb(156, 0, 78);
     color: white
+}
+
+/* RECIPE DETAIL */
+.recipe-wrap {
+    margin: 10px;
+}
+
+.recipe-process {
+    text-indent: 1.5em
 }
