@@ -4,16 +4,15 @@ angular.module('categoriesList')
         controller: ['$scope', '$rootScope', '$timeout', 'httpservice', function CategoriesListController($scope, $rootScope, $timeout, httpservice) {
             var self = this
             //$rootScope.categoryID = 0;
-            console.log($rootScope.categoryID)
             let promise = httpservice
-            console.log(promise)
             promise.then(function (resp) {
-                console.log(resp.data)
                 $scope.categories = resp.data.categories
-                console.log($scope.categories)
             })
-            $scope.changeCategory = function (id) {
+            $scope.changeCategory = function (id, index) {
                 $rootScope.categoryID = id
+                $rootScope.page = 1
+                $rootScope.categoryActive.name = index;
+                $rootScope.pageActive.page = 1
             }
         }
         ]

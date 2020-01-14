@@ -7,22 +7,212 @@
         {
             "name": "Вторая категория",
             "id": 2
+        },
+        {
+            "name": "Третья категория",
+            "id": 3
+        },
+        {
+            "name": "Четвертая категория",
+            "id": 4
+        },
+        {
+            "name": "Пятая категория",
+            "id": 5
+        },
+        {
+            "name": "Шестая категория",
+            "id": 6
+        },
+        {
+            "name": "Седьмая категория",
+            "id": 7
         }
     ],
-    "recipes":[
-        {"id": 1,
+    "recipes": [
+        {
+            "id": 1,
             "title": "Первое",
             "description": "Описание 1",
-            "ingredients": ["инг1","инг2"],
-            "process": ["Проц 1"],
+            "ingredients": [
+                "инг1",
+                "инг2"
+            ],
+            "process": [
+                "Проц 1"
+            ],
             "photo": [],
-            "categoryID":[1]},
-            {"id": 2,
-                "title": "Второе",
-                "description": "Описание 2",
-                "ingredients": ["инг3","инг4"],
-                "process": ["Проц 2"],
-                "photo": [],
-                "categoryID":[2]}
+            "categoryID": [
+                1
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Второе",
+            "description": "Описание 2",
+            "ingredients": [
+                "инг3",
+                "инг4"
+            ],
+            "process": [
+                "Проц 2"
+            ],
+            "photo": [],
+            "categoryID": [
+                2
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Третье",
+            "description": "Описание 3",
+            "ingredients": [
+                "инг1",
+                "инг2"
+            ],
+            "process": [
+                "Проц 1"
+            ],
+            "photo": [],
+            "categoryID": [
+                3
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Четвертое",
+            "description": "Описание 4",
+            "ingredients": [
+                "инг3",
+                "инг4"
+            ],
+            "process": [
+                "Проц 2"
+            ],
+            "photo": [],
+            "categoryID": [
+                4
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Пятое",
+            "description": "Описание 5",
+            "ingredients": [
+                "инг3",
+                "инг4"
+            ],
+            "process": [
+                "Проц 2"
+            ],
+            "photo": [],
+            "categoryID": [
+                5
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Шестое",
+            "description": "Описание 6",
+            "ingredients": [
+                "инг3",
+                "инг4"
+            ],
+            "process": [
+                "Проц 2"
+            ],
+            "photo": [],
+            "categoryID": [
+                6
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Седьмое",
+            "description": "Описание 7",
+            "ingredients": [
+                "инг3",
+                "инг4"
+            ],
+            "process": [
+                "Проц 2"
+            ],
+            "photo": [],
+            "categoryID": [
+                7
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Восьмое",
+            "description": "Описание 8",
+            "ingredients": [
+                "инг3",
+                "инг4"
+            ],
+            "process": [
+                "Проц 2"
+            ],
+            "photo": [],
+            "categoryID": [
+                1,
+                3
+            ]
+        },
+        {
+            "id": 9,
+            "title": "Девятое",
+            "description": "Описание 9",
+            "ingredients": [
+                "инг3",
+                "инг4"
+            ],
+            "process": [
+                "Проц 2"
+            ],
+            "photo": [],
+            "categoryID": [
+                5,
+                1,
+                7
+            ]
+        },
+        {
+            "id": 10,
+            "title": "Десятое",
+            "description": "Описание 10",
+            "ingredients": [
+                "инг3",
+                "инг4"
+            ],
+            "process": [
+                "Проц 2"
+            ],
+            "photo": [],
+            "categoryID": [
+                1,
+                2,
+                3,
+                6,
+                7
+            ]
+        },
+        {
+            "id": 11,
+            "title": "Одиннадцатое",
+            "description": "Описание 11",
+            "ingredients": [
+                "инг3",
+                "инг4"
+            ],
+            "process": [
+                "Проц 2"
+            ],
+            "photo": [],
+            "categoryID": [
+                6,
+                3
+            ]
+        }
     ]
 }

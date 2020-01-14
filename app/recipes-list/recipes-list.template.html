@@ -1,7 +1,7 @@
 <input ng-model='query'>
 <div>{{recipes.length}}</div>
 <div class='recipes-wrap'>
-    <div ng-repeat='recipe in recipes |category:$root.categoryID |filter:query' class='recipe'>
+    <div ng-repeat='recipe in recipes |category:$root.categoryID |itemsOnPage:$root.page |filter:query'  class='recipe'>
         <h4>{{recipe.title}}</h4>
         <p>id{{recipe.id}}</p>
         <p>{{recipe.description}}</p>
@@ -13,5 +13,7 @@
     </div>
 </div>
 <div class='pages-wrap'>
-    <button ng-repeat='btn in _.range(((recipes | category:$root.categoryID | filter:query).length)/$root.onPage)'>{{$index+1}}</button>
+    <button ng-repeat='btn in _.range(((recipes | category:$root.categoryID | filter:query).length)/$root.onPage)'
+            ng-click='$root.page=($index+1);$root.pageActive.page = $index+1'
+            ng-class="{'active': $root.pageActive.page === $index+1}">{{$index+1}}</button>
 </div>

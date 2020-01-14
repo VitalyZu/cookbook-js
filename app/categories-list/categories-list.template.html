@@ -2,6 +2,6 @@
 <div ng-init='$root.categoryActive'>
     <button ng-class="{'active' : $root.categoryActive.name === 'all'}" ng-click='changeCategory(0);$root.categoryActive.name="all"'>Все рецепты</button>
     <button ng-class="{'active': $root.categoryActive.name === $index}"
-            ng-click='changeCategory(category.id);$root.categoryActive.name = $index'
+            ng-click='changeCategory(category.id, $index)'
             ng-repeat='category in categories'>{{category.name}}</button>
 </div>
