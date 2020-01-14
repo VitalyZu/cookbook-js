@@ -1,9 +1,9 @@
-<div class="input-group input-group-sm mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-sm">Поиск</span>
-    </div>
-    <input ng-model='query' type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+<div class="input-group input-group-lg m-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg">Поиск</span>
   </div>
+  <input ng-model='query' type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+</div>
 <div>{{recipes.length}}</div>
 <!-- <div class='recipes-wrap'>
     <div ng-repeat='recipe in recipes |category:$root.categoryID |itemsOnPage:$root.page |filter:query'  class='recipe'>
@@ -24,6 +24,9 @@
     <div class="card-body">
       <h6 class="card-title">{{recipe.title}}</h6>
       <p class="card-text">{{recipe.description}}</p>
+      <div class='tags'>
+        <div ng-repeat='category in recipe.categoryID | categoryName:$ctrl.categories' class='category-name category-{{category.id}}'>{{category.name}}</div>
+    </div>
       <a href="#!/recipes/{{recipe.id}}" class="btn btn-primary">Рецепт</a>
     </div>
   </div>

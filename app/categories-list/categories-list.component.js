@@ -14,6 +14,7 @@ angular.module('categoriesList')
                 $rootScope.categoryActive.name = index;
                 $rootScope.pageActive.page = 1
             }
+            
         }
         ]
     })

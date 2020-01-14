@@ -1,39 +1,23 @@
-a {
-    text-decoration: none;
-    color: inherit;
-    border: solid 1px black;
-}
+
 
 .recipes-wrap {
     border: solid 1px black;
 }
 
-.recipes-wrap button, .recipe-wrap button {
-    padding: 0px;
-    width: 50%;
-}
-a {
-    padding: 4px 0px;
-    display: inline-block;
-    width: 100%;
-}
 
 
-.recipe {
-    border: solid 1px blue;
-    margin: 5px;
-}
 
-.active {
-    border: solid 2px green;
+
+.tags {
+    line-height: 14px;
 }
 
 .category-name {
-    border: solid 1px;
     display: inline-block;
     font-size: 10px;
     border-radius: 45px;
-    padding: 4px;
+    padding: 0px 4px;
+    margin: 0px;
 }
 
 .category-1 {
@@ -88,3 +72,4 @@ a {
 .card-text {
     margin-bottom: auto;
 }
+
