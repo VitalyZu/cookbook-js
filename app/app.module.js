@@ -5,7 +5,7 @@ angular.module('cookBook', ['categoriesList', 'recipesList', 'recipeDetail', 'ng
     $rootScope.categoryID = 0
     $rootScope.categoryActive = { 'name': "all" }
     $rootScope.page = 1
-    $rootScope.onPage = 10
+    $rootScope.onPage = 12
     $rootScope.pageActive = { 'page': 1 }
   })
   .factory('httpservice', function ($q, $http) {

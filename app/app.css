@@ -25,7 +25,7 @@ a {
 }
 
 .active {
-    border: solid 2px green
+    border: solid 2px green;
 }
 
 .category-name {
@@ -78,4 +78,13 @@ a {
 
 .recipe-process {
     text-indent: 1.5em
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text {
+    margin-bottom: auto;
 }

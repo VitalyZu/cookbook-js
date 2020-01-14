@@ -1,6 +1,11 @@
-<input ng-model='query'>
+<div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Поиск</span>
+    </div>
+    <input ng-model='query' type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+  </div>
 <div>{{recipes.length}}</div>
-<div class='recipes-wrap'>
+<!-- <div class='recipes-wrap'>
     <div ng-repeat='recipe in recipes |category:$root.categoryID |itemsOnPage:$root.page |filter:query'  class='recipe'>
         <h4>{{recipe.title}}</h4>
         <p>id{{recipe.id}}</p>
@@ -11,9 +16,24 @@
             <div ng-repeat='category in recipe.categoryID | categoryName:$ctrl.categories' class='category-name category-{{category.id}}'>{{category.name}}</div>
         </div>
     </div>
+</div> -->
+<div class='container'>
+    <div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4'>
+<div class="card" style="width: 18rem;" ng-repeat='recipe in recipes |category:$root.categoryID |itemsOnPage:$root.page |filter:query'>
+    <img src="" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h6 class="card-title">{{recipe.title}}</h6>
+      <p class="card-text">{{recipe.description}}</p>
+      <a href="#!/recipes/{{recipe.id}}" class="btn btn-primary">Рецепт</a>
+    </div>
+  </div>
 </div>
+</div>
+
 <div class='pages-wrap'>
     <button ng-repeat='btn in _.range(((recipes | category:$root.categoryID | filter:query).length)/$root.onPage)'
             ng-click='$root.page=($index+1);$root.pageActive.page = $index+1'
             ng-class="{'active': $root.pageActive.page === $index+1}">{{$index+1}}</button>
 </div>
+
+
