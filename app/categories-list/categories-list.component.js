@@ -7,14 +7,18 @@ angular.module('categoriesList')
             let promise = httpservice
             promise.then(function (resp) {
                 $scope.categories = resp.data.categories
+                $scope.recipes = resp.data.recipes
             })
             $scope.changeCategory = function (id, index) {
                 $rootScope.categoryID = id
                 $rootScope.page = 1
                 $rootScope.categoryActive.name = index;
                 $rootScope.pageActive.page = 1
+                let a = $rootScope.searchValue
+                $rootScope.searchValue = a
+                console.log($rootScope.searchValue)
             }
-            
+
         }
         ]
     })

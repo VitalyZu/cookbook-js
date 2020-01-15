@@ -1,7 +1,7 @@
 
 
 .recipes-wrap {
-    border: solid 1px black;
+    min-height: calc(100vh - 86px);
 }
 
 
@@ -21,32 +21,32 @@
 }
 
 .category-1 {
-    background-color: red;
+    background-color: #F85229 ;
     color: white
 }
 
 .category-2 {
-    background-color: blue;
+    background-color: #1648FF  ;
     color: white
 }
 
 .category-3 {
-    background-color: purple;
+    background-color: #AA29F8 ;
     color: white
 }
 
 .category-4 {
-    background-color: yellowgreen;
+    background-color: #25D52F  ;
     color: white
 }
 
 .category-5 {
-    background-color: brown;
+    background-color: #CE7A00 ;
     color: white
 }
 
 .category-6 {
-    background-color: green;
+    background-color: #E15EC3  ;
     color: white
 }
 
@@ -56,6 +56,11 @@
 }
 
 /* RECIPE DETAIL */
+
+.recipe-detail {
+    min-height: 100vh;
+}
+
 .recipe-wrap {
     margin: 10px;
 }
@@ -64,12 +69,43 @@
     text-indent: 1.5em
 }
 
+.card {
+    border: solid 1px white !important;
+    margin-bottom: 29px;
+}
+
 .card-body {
     display: flex;
     flex-direction: column;
+    border: solid 1px rgba(0,0,0,.125);
+    margin: -13px;
 }
+
 
 .card-text {
     margin-bottom: auto;
+}
+
+.navbar-toggler {
+    border: solid 1px #E9F7FF    !important
+}
+
+footer {
+    width: 100%;
+    height: 70px;
+    background-color: #0275d8;
+    color: #f7f7f7;
+}
+
+.social {
+    font-size: 30px;
+}
+
+.social a {
+    color: white;
+}
+
+.badge {
+    display: inline !important;
 }
 

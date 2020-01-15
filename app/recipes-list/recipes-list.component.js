@@ -9,7 +9,7 @@ angular.module('recipesList')
             promise.then(function (resp) {
                 $scope.recipes = resp.data.recipes
                 self.categories = resp.data.categories
-                
+
                 //HEIGHT
                 $timeout(function () {
                     let htmlCollection = document.getElementsByClassName('card-body')
@@ -24,9 +24,12 @@ angular.module('recipesList')
                         htmlCollection[i].style.height = `${$scope.maxHeight}px`
                     }
                 })
-
-
             })
+            $scope.handleInput = function (e) {
+                console.log(e)
+                $rootScope.searchValue = e
+                $rootScope.page = 1
+            }
 
         }
         ]

@@ -3,8 +3,8 @@ angular.module('core')
         return function (items, categories) {
             var filtered = []
             var categ = categories
-            _.forEach(items, function(item){
-                let elem = _.find(categ,{'id':item})
+            _.forEach(items, function (item) {
+                let elem = _.find(categ, { 'id': item })
                 filtered.push(elem)
             })
             /* //console.log(categories)

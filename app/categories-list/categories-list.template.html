@@ -23,24 +23,21 @@
 </div> -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="#"><i class="fas fa-utensils"></i></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item"
-         ng-click='changeCategory(0);$root.categoryActive.name="all"'>
-      <a ng-class="{'active' : $root.categoryActive.name === 'all'}" class="nav-link" href="#">Все рецепты</a>
-    </li>
-    <li class="nav-item" 
-    ng-click='changeCategory(category.id, $index)'
-    ng-repeat='category in categories'>
-      <a ng-class="{'active': $root.categoryActive.name === $index}" class="nav-link" href="#">{{category.name}}</a>
-    </li>
+      <li class="nav-item" ng-click='changeCategory(0);$root.categoryActive.name="all"'>
+        <a ng-class="{'active' : $root.categoryActive.name === 'all'}" class="nav-link" href="#">Все рецепты <span
+            class="badge badge-warning">{{(recipes | filter:$root.searchValue).length}}</span></a>
+      </li>
+      <li class="nav-item" ng-click='changeCategory(category.id, $index)' ng-repeat='category in categories'>
+        <a ng-class="{'active': $root.categoryActive.name === $index}" class="nav-link" href="#">{{category.name}} <span
+            class="badge badge-warning">{{(recipes |category:$index+1 | filter:$root.searchValue).length}}</span></a>
+      </li>
     </ul>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
-    </form>
   </div>
 </nav>

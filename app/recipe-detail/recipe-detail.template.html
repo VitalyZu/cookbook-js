@@ -1,4 +1,4 @@
-<div class='recipe-wrap'>
+<!-- <div class='recipe-wrap'>
 <h1>{{recipe.title}}</h1>
 <p>{{recipe.description}}</p>
 <ul>
@@ -6,6 +6,16 @@
 </ul>
 <div ng-repeat='proc in recipe.process' class='recipe-process'>{{proc}}</div>
 <button ng-click='backHandler()'><a href="#!/recipes/">Назад</a></button>
+</div> -->
+
+<div class='container mt-4 recipe-detail'>
+    <h1 class="display-4">{{recipe.title}}</h1>
+    <p><em><small>{{recipe.description}}</small></em></p>
+    <ul>
+        <li ng-repeat='ingredient in recipe.ingredients'>
+            <h4>{{ingredient}}</h4>
+        </li>
+    </ul>
+    <div ng-repeat='proc in recipe.process' class='recipe-process'>{{proc}}</div>
+    <button type="button" class="btn btn-primary mt-5" onClick='location.href="#!/recipes/"'>Назад</button>
 </div>
-
-
