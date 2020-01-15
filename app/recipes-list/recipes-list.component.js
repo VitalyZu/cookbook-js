@@ -1,7 +1,7 @@
 angular.module('recipesList')
     .component('recipesList', {
         templateUrl: 'recipes-list/recipes-list.template.html',
-        controller: ['$scope', '$rootScope', '$timeout', 'httpservice', function RecipesListController($scope, $rootScope, $timeout, httpservice) {
+        controller: ['$scope', '$rootScope', '$timeout', 'httpservice','$filter', function RecipesListController($scope, $rootScope, $timeout, httpservice,$filter) {
             var self = this
             $scope._ = _
             $scope.isLoaded = $rootScope.isLoaded
@@ -26,9 +26,16 @@ angular.module('recipesList')
                 })
             })
             $scope.handleInput = function (e) {
-                console.log(e)
                 $rootScope.searchValue = e
                 $rootScope.page = 1
+                let a = $rootScope.a
+                if(!(a===($filter('filter')($scope.recipes, $rootScope.searchValue)).length)){
+                    $rootScope.a = ($filter('filter')($scope.recipes, $rootScope.searchValue)).length
+                    let elem = document.getElementsByClassName('badge')[0]
+                    elem.style.backgroundColor = 'white'
+                    setTimeout(()=>elem.style.backgroundColor = '#ffc107')
+                }
+                
             }
 
         }
