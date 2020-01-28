@@ -18,9 +18,6 @@ angular.module('categoriesList')
                 /* let a = $rootScope.searchValue
                 $rootScope.searchValue = a */
             }
-
-            
-
         }
         ]
     })

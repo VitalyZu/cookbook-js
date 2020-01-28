@@ -1,7 +1,7 @@
 angular.module('recipesList')
     .component('recipesList', {
         templateUrl: 'recipes-list/recipes-list.template.html',
-        controller: ['$scope', '$rootScope', '$timeout', 'httpservice','$filter', function RecipesListController($scope, $rootScope, $timeout, httpservice,$filter) {
+        controller: ['$scope', '$rootScope', '$timeout', 'httpservice', '$filter', function RecipesListController($scope, $rootScope, $timeout, httpservice, $filter) {
             var self = this
             $scope._ = _
             $scope.isLoaded = $rootScope.isLoaded
@@ -20,22 +20,36 @@ angular.module('recipesList')
                     })
                     $scope.maxHeight = _.max(heightArray)
                     for (let i = 0; i < htmlCollection.length; i++) {
-                        console.log(htmlCollection[i].style.height)
                         htmlCollection[i].style.height = `${$scope.maxHeight}px`
                     }
                 })
             })
             $scope.handleInput = function (e) {
-                $rootScope.searchValue = e
                 $rootScope.page = 1
                 let a = $rootScope.a
-                if(!(a===($filter('filter')($scope.recipes, $rootScope.searchValue)).length)){
+                if (!(a === ($filter('filter')($scope.recipes, $rootScope.searchValue)).length)) { //$rootScope.a = ($filter('filter')($scope.recipes, $rootScope.searchValue)).length
                     $rootScope.a = ($filter('filter')($scope.recipes, $rootScope.searchValue)).length
                     let elem = document.getElementsByClassName('badge')[0]
+                    console.log(elem.innerHTML)
                     elem.style.backgroundColor = 'white'
-                    setTimeout(()=>elem.style.backgroundColor = '#ffc107')
+                    setTimeout(() => elem.style.backgroundColor = '#ffc107', 500)
+                    let b = document.getElementsByClassName('badge')
+                    for (let i = 1; i < b.length; i++) {  
+                        let arr = _.filter($scope.recipes, function (v) {
+                             return _.includes(v.categoryID,i)
+                        })
+                        /* console.log(`Категория <<<${i}>>>`)
+                        console.log(`Arr length = ${arr.length}`)
+                        console.log(`Search array = ${($filter('filter')(arr, $rootScope.searchValue)).length}`)
+                        console.log((arr.length !== ($filter('filter')(arr, $rootScope.searchValue)).length)) */                           
+
+                        if ((arr.length !== ($filter('filter')(arr, $rootScope.searchValue)).length) && (b[i].innerHTML!=='0')) {
+                            b[i].style.backgroundColor = 'white'
+                            setTimeout(() => b[i].style.backgroundColor = '#ffc107', 500)
+                        }
+                    }
                 }
-                
+
             }
 
         }
