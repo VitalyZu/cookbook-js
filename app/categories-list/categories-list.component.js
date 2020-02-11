@@ -15,8 +15,6 @@ angular.module('categoriesList')
                 $rootScope.page = 1
                 $rootScope.categoryActive.name = index;
                 $rootScope.pageActive.page = 1
-                /* let a = $rootScope.searchValue
-                $rootScope.searchValue = a */
             }
         }
         ]

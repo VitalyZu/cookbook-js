@@ -30,26 +30,23 @@ angular.module('recipesList')
                 if (!(a === ($filter('filter')($scope.recipes, $rootScope.searchValue)).length)) { //$rootScope.a = ($filter('filter')($scope.recipes, $rootScope.searchValue)).length
                     $rootScope.a = ($filter('filter')($scope.recipes, $rootScope.searchValue)).length
                     let elem = document.getElementsByClassName('badge')[0]
-                    console.log(elem.innerHTML)
                     elem.style.backgroundColor = 'white'
                     setTimeout(() => elem.style.backgroundColor = '#ffc107', 500)
                     let b = document.getElementsByClassName('badge')
-                    for (let i = 1; i < b.length; i++) {  
+                    for (let i = 1; i < b.length; i++) {
                         let arr = _.filter($scope.recipes, function (v) {
-                             return _.includes(v.categoryID,i)
+                            return _.includes(v.categoryID, i)
                         })
-                        /* console.log(`Категория <<<${i}>>>`)
-                        console.log(`Arr length = ${arr.length}`)
-                        console.log(`Search array = ${($filter('filter')(arr, $rootScope.searchValue)).length}`)
-                        console.log((arr.length !== ($filter('filter')(arr, $rootScope.searchValue)).length)) */                           
-
-                        if ((arr.length !== ($filter('filter')(arr, $rootScope.searchValue)).length) && (b[i].innerHTML!=='0')) {
+                        if ((b[i].innerHTML != ($filter('filter')(arr, $rootScope.searchValue)).length)) {
+                            console.log(($filter('filter')(arr, $rootScope.searchValue)).length)
+                            console.log(b[i].innerHTML)
+                            console.log(arr.length)
+                            console.log('_____')
                             b[i].style.backgroundColor = 'white'
                             setTimeout(() => b[i].style.backgroundColor = '#ffc107', 500)
                         }
                     }
                 }
-
             }
 
         }
