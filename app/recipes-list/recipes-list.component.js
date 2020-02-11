@@ -38,10 +38,6 @@ angular.module('recipesList')
                             return _.includes(v.categoryID, i)
                         })
                         if ((b[i].innerHTML != ($filter('filter')(arr, $rootScope.searchValue)).length)) {
-                            console.log(($filter('filter')(arr, $rootScope.searchValue)).length)
-                            console.log(b[i].innerHTML)
-                            console.log(arr.length)
-                            console.log('_____')
                             b[i].style.backgroundColor = 'white'
                             setTimeout(() => b[i].style.backgroundColor = '#ffc107', 500)
                         }

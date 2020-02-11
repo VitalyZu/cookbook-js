@@ -21,7 +21,7 @@
     <div class='container'>
         <div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4'>
             <div class="card col"
-                ng-repeat='recipe in recipes |category:$root.categoryID |filter:$root.searchValue |itemsOnPage:$root.page '>
+                ng-repeat='recipe in recipes |category:$root.categoryID |filter:$root.searchValue |itemsOnPage:$root.page'>
                 <div class="card-body">
                     <h6 class="card-title"><strong>{{recipe.title}}</strong></h6>
                     <p class="card-text text-muted"><small>{{recipe.description}}</small></p>
@@ -33,7 +33,9 @@
                 </div>
             </div>
         </div>
+        <div class='' ng-hide='(recipes |category:$root.categoryID |filter:$root.searchValue |itemsOnPage:$root.page).length > 0'>Ничего не найдено</div>
     </div>
+    
 </div>
 <div class="container">
     <nav aria-label="...">
